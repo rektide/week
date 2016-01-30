@@ -12,12 +12,21 @@ var
 	now.getMinutes(),
 	now.getSeconds(),
 	now.getMilliseconds()),
-  yearday= weekdays.indexOf(year.toString().substring(0,3)),
-  days= (now.getTime()- year.getTime()) / 1000. / 60. / 60. / 24.,
-  weeks= Math.floor((days + 6 - yearday) / 7.) // taken from the Monday
+  yearday= weekdays.indexOf(year.toString().substring(0,3))
 
-if(yearday > 3){
-	--weeks
+function week(){
+	var
+	  now= new Date(),
+	  days= (now.getTime()- year.getTime()) / 1000. / 60. / 60. / 24.,
+	  weeks= Math.floor((days + 6 - yearday) / 7.) // taken from the Monday
+	if(yearday > 3){
+		--weeks
+	}
+	return weeks
 }
 
-console.log(weeks)
+if(require.main === module){
+	console.log(week)
+}
+
+module.exports= week
