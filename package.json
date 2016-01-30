@@ -1,5 +1,5 @@
 {
-	"name": "week",
+	"name": "week-of-year",
 	"version": "1.0.0",
 	"description": "Calculate ISO-8601 week of year",
 	"main": "week",
@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://archive.voodoowarez.com/week"
+		"url": "https://archive.voodoowarez.com/week-of-year"
 	},
 	"author": "rektide de la faye",
 	"license": "X",
