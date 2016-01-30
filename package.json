@@ -1,0 +1,16 @@
+{
+	"name": "week",
+	"version": "1.0.0",
+	"description": "Calculate ISO-8601 week of year",
+	"main": "index.js",
+	"bin": "week",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://archive.voodoowarez.com/week"
+	},
+	"author": "rektide de la faye",
+	"license": "X"
+}
