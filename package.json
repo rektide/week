@@ -2,8 +2,12 @@
 	"name": "week-of-year",
 	"version": "1.0.0",
 	"description": "Calculate ISO-8601 week of year",
-	"main": "week",
-	"bin": "week",
+	"main": "index.js",
+	"bin": {
+		"weeksince": "weeksince",
+		"siderealsince": "siderealsince"
+	},
+	"module": "index.js",
 	"scripts": {
 		"test": "node .test"
 	},
@@ -15,5 +19,13 @@
 	"license": "X",
 	"devDependencies": {
 		"tape": "^4.4.0"
+	},
+	"dependencies": {
+		"@std/esm": "^0.19.1",
+		"read-or-execute": "^1.0.5",
+		"xdg-basedir": "^3.0.0"
+	},
+	"@std/esm": {
+		"esm": "js"
 	}
 }
