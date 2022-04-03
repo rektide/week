@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-"use strict"
-
-require = require("@std/esm")( module)
-var
-  main = require("./main.js").default,
-  since= require("./since.js").default
-
-main( undefined, undefined, undefined, since)

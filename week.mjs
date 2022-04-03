@@ -35,9 +35,11 @@ function week( d) {
 	return weekNo;
 }
 
-if( require.main === module){
+if( import.meta.url === process.argv[1]){
 	console.log( week())
 	process.on( "uncaughtException", console.error.bind( console))
 }
 
-module.exports= week
+export {
+	week
+}
