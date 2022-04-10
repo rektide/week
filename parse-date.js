@@ -5,8 +5,14 @@ export default function( val){
 		return val
 	}
 	if( typeof( val)=== "string"){
-		if( isNum.test( val)){
-			val= Number.parseFloat( val)
+		if( val=== ""){
+			val= undefined
+		}else if( isNum.test( val)){
+			const n= Number.parseInt( val)
+			// assume first minute of time to mean years, not epoch
+			if (n> 60000){
+				val= n
+			}
 		}
 	}
 	return val!== undefined? new Date( val): new Date()
