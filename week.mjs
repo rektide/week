@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 "use strict"
 
+// temporal support waiting on:
+// https://github.com/js-temporal/proposal-temporal-v2/issues/11
+
 /*
  * credit http://stackoverflow.com/questions/6117814/get-week-of-year-in-javascript-like-in-php/6117889#6117889
  */
