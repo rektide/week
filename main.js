@@ -7,13 +7,20 @@ import parseDate from "./parse-date.js"
 import since from "./since.js"
 
 async function xdgConfig(){
-	var val
 	try {
-		val= await readOrExecute( xdgBasedir.config+ sep+ "weekssince"+ sep+ "weekssince.json")
+		const stream= await readOrExecute( xdgBasedir.config+ sep+ "weekssince"+ sep+ "weekssince.json")
+		const buf= []
+		for await( const b of stream){
+			buf.push( b);
+		}
+
+		const val= buf.join("");
+		console.log({val})
+		return JSON.parse( val)
 	}catch( e){
+		console.log(e)
 		return {}
 	}
-	return JSON.parse( val)
 }
 
 function main( from, to, config= xdgConfig, fn){
