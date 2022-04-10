@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import sep from "path"
+import { sep} from "path"
 import readOrExecute from "read-or-execute"
 import xdgBasedir from "xdg-basedir"
 
