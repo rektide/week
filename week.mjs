@@ -35,7 +35,7 @@ function week( d) {
 	return weekNo;
 }
 
-if( import.meta.url === process.argv[1]){
+if( import.meta.url=== `file://${process.argv[ 1]}`){
 	console.log( week())
 	process.on( "uncaughtException", console.error.bind( console))
 }

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import sep from "path"
 import readOrExecute from "read-or-execute"
 import xdgBasedir from "xdg-basedir"
@@ -15,7 +16,7 @@ async function xdgConfig(){
 	return JSON.parse( val)
 }
 
-function main( from, to, config, fn){
+function main( from, to, config= xdgConfig, fn){
 	if( config=== undefined){
 		config= xdgConfig
 	}
@@ -33,7 +34,10 @@ function main( from, to, config, fn){
 	fn= fn|| since
 
 	var val= fn( from, to)
-	console.log( val)
 	return val
 }
 export default main
+
+if( import.meta.url=== `file://${process.argv[ 1]}`){
+	(async () => console.log(await main()))();
+}

@@ -1,4 +1,4 @@
-var isNum= /\d+/
+var isNum= /^\d+$/
 
 export default function( val){
 	if( val instanceof Date){
