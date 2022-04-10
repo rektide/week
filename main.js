@@ -15,12 +15,19 @@ async function xdgConfig(){
 		}
 
 		const val= buf.join("");
-		console.log({val})
 		return JSON.parse( val)
 	}catch( e){
-		console.log(e)
 		return {}
 	}
+}
+
+function deNow( t){
+	if ( t=== "now"){
+		return "" // nullish won't override this, parseDate will see this
+	}else if( t=== ""){
+		return undefined // nullish will override this, parseDate will see latter
+	}
+	return t
 }
 
 function main( from, to, config= xdgConfig, fn){
@@ -36,9 +43,11 @@ function main( from, to, config= xdgConfig, fn){
 	}
 	config= config|| {}
 
+	from= deNow( from)?? deNow( process.argv[2])?? deNow( config.from)
+	to= deNow(to)?? deNow( process.argv[3])?? deNow( config.to)
 
-	from= parseDate( from?? process.argv[ 2]?? config.from)
-	to= parseDate( to?? process.argv[ 3]?? config.to)
+	from= parseDate( from)
+	to= parseDate( to)
 	fn= fn|| since
 
 	var val= fn( from, to)

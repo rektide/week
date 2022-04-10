@@ -5,7 +5,7 @@ export default function( val){
 		return val
 	}
 	if( typeof( val)=== "string"){
-		if( val=== ""){
+		if( val=== ""|| val=== "now"){
 			val= undefined
 		}else if( isNum.test( val)){
 			const n= Number.parseInt( val)
