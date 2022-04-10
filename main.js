@@ -36,8 +36,9 @@ function main( from, to, config= xdgConfig, fn){
 	}
 	config= config|| {}
 
-	from= parseDate( from|| process.argv[ 2]|| config.from)
-	to= parseDate( to|| process.argv[ 3]|| config.to)
+
+	from= parseDate( from?? process.argv[ 2]?? config.from)
+	to= parseDate( to?? process.argv[ 3]?? config.to)
 	fn= fn|| since
 
 	var val= fn( from, to)
